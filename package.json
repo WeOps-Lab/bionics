@@ -27,7 +27,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-bionics",
+    "start": "egg-scripts start --title=egg-server-bionics",
     "stop": "egg-scripts stop --title=egg-server-bionics",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",

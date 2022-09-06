@@ -1,5 +1,7 @@
 # Bionics
 
+![](https://wedoc.canway.net/imgs/img/嘉为蓝鲸.jpg)
+
 Bionic是一个后端图表生成服务，具备将前端图表在`无需Headless浏览器`的条件下，在服务端生成图片，并返回给客户端:
 
 * 支持生成EChart图片

@@ -6,7 +6,7 @@ class AppBootHook {
   }
 
   async didReady() {
-    const rendered = await art.font('BIONICS', 'doom').completed();
+    const rendered = await art.font('BIONICS', 'Doom').completed();
     console.log(rendered);
   }
 
