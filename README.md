@@ -20,7 +20,7 @@ width|Canvas宽度|否|500|Canvas的大小会生成的速度
 height|Canvas高度|否|200|Canvas的大小会生成的速度
 theme|Echart的主题|否|westeros||
 fontSize|Canvas字体大小|否|12||
-mode|返回的图片形式|否|base64| 可选  base64|stream, Base64模式下，图片会被编码为Base64返回调用端，Stream模式下，图片会直接以stream的模式返回
+mode|返回的图片形式|否|base64| 可选  base64/stream, Base64模式下，图片会被编码为Base64返回调用端，Stream模式下，图片会直接以stream的模式返回
 
 
 示例
