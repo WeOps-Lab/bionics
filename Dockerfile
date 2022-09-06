@@ -20,4 +20,4 @@ RUN yarn config set registry https://registry.npm.taobao.org -g &&\
     yarn config set fse_binary_host_mirror https://npm.taobao.org/mirrors/fsevents -g 
 
 RUN yarn install 
-CMD egg-scripts start --title=egg-server-bionics
+CMD yarn start
