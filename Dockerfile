@@ -11,10 +11,11 @@ ADD ./app ./app
 ADD ./config ./config
 ADD ./app.js ./app.js
 ADD ./opentelemetry.js ./opentelemetry.js
-ADD ./docker-entrypoint.js ./docker-entrypoint.sh
+ADD ./docker-entrypoint.sh ./docker-entrypoint.sh
 
 ENV OTLP_URL http://127.0.0.1:4318/v1/traces
 ENV SERVICE_NAME bionics
+ENV ENABLE_OTEL false
 
 RUN yarn config set registry https://registry.npm.taobao.org -g &&\
     yarn config set disturl https://npm.taobao.org/dist -g &&\
@@ -26,5 +27,5 @@ RUN yarn config set registry https://registry.npm.taobao.org -g &&\
     yarn config set fse_binary_host_mirror https://npm.taobao.org/mirrors/fsevents -g &&\
     chmod 0755  ./docker-entrypoint.sh
 
-RUN yarn install 
+RUN yarn install
 ENTRYPOINT ["/apps/app/docker-entrypoint.sh"]
