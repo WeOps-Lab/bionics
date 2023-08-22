@@ -10,6 +10,12 @@ ADD package.json ./package.json
 ADD ./app ./app
 ADD ./config ./config
 ADD ./app.js ./app.js
+ADD ./opentelemetry.js ./opentelemetry.js
+ADD ./docker-entrypoint.sh ./docker-entrypoint.sh
+
+ENV OTLP_URL http://127.0.0.1:4318/v1/traces
+ENV SERVICE_NAME bionics
+ENV ENABLE_OTEL false
 
 RUN yarn config set registry https://registry.npm.taobao.org -g &&\
     yarn config set disturl https://npm.taobao.org/dist -g &&\
@@ -18,7 +24,8 @@ RUN yarn config set registry https://registry.npm.taobao.org -g &&\
     yarn config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/ -g &&\
     yarn config set chromedriver_cdnurl https://cdn.npm.taobao.org/dist/chromedriver -g &&\
     yarn config set operadriver_cdnurl https://cdn.npm.taobao.org/dist/operadriver -g &&\
-    yarn config set fse_binary_host_mirror https://npm.taobao.org/mirrors/fsevents -g 
+    yarn config set fse_binary_host_mirror https://npm.taobao.org/mirrors/fsevents -g &&\
+    chmod 0755  ./docker-entrypoint.sh
 
-RUN yarn install 
-CMD yarn start
+RUN yarn install
+ENTRYPOINT ["/apps/app/docker-entrypoint.sh"]
