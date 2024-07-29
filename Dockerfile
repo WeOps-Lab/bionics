@@ -1,4 +1,4 @@
-FROM node:18.8.0
+FROM node:20
 ENV LANG C.UTF-8
 
 RUN apt-get update \
